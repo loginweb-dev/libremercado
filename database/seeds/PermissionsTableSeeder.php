@@ -33,8 +33,16 @@ class PermissionsTableSeeder extends Seeder
 
         Permission::generateFor('settings');
 
+        //---------------------------------
         Permission::generateFor('pages');
-
         Permission::generateFor('blocks');
+
+        // --------------MODULO INVENTARIO -----------------------------------
+        Permission::generateFor('categories');
+        Permission::generateFor('sub_categories');
+        Permission::generateFor('brands');
+        Permission::generateFor('products');
+        Permission::generateFor('product_details');
+        Permission::generateFor('deliveries');
     }
 }

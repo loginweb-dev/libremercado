@@ -194,5 +194,194 @@ class MenuItemsTableSeeder extends Seeder
         //         'order'      => 14,
         //     ])->save();
         // }
+
+
+        //----------------------------------------------
+        $InventarioMenuItem = MenuItem::firstOrNew([
+            'menu_id' => $menu->id,
+            'title'   => 'Inventario',
+            'url'     => '',
+        ]);
+        if (!$InventarioMenuItem->exists) {
+            $InventarioMenuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-data',
+                'color'      => null,
+                'parent_id'  => null, //menu desplegable
+                'order'      => 2,
+            ])->save();
+        }
+            $postion = 1;
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Productos',
+                'url'     => '',
+                'route'   => 'voyager.products.index',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => 'voyager-double-right',
+                    'color'      => null,
+                    'parent_id'  => $InventarioMenuItem->id,
+                    'order'      => $postion++,
+                ])->save();
+            }
+
+            //---------------------------
+
+
+
+            //--------------------------- MODULO INVENTARIO --------------------------
+        //-----------------------------------------------------------------------
+        Menu::firstOrCreate([
+            'name' => 'categories',
+        ]);
+        //-------------------------------------------------
+        Menu::firstOrCreate([
+            'name' => 'sub_categories',
+        ]);
+        //-------------------------------------------------
+        Menu::firstOrCreate([
+            'name' => 'brands',
+        ]);
+        //-------------------------------------------------
+        Menu::firstOrCreate([
+            'name' => 'products',
+        ]);
+            $menu = Menu::where('name', 'products')->firstOrFail();
+            $count=1;
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Listar los Productos',
+                'url'     => 'admin/products/1',
+                'route'   => null
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => null,
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => $count++,
+                ])->save();
+            }
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Nuevo Producto',
+                'url'     => 'admin/products/create',
+                'route'   => null
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => null,
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => $count++,
+                ])->save();
+            }
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Nueva Categoria',
+                'url'     => 'admin/categories/create',
+                'route'   => null
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => null,
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => $count++,
+                ])->save();
+            }
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Nueva Sub Categoria',
+                'url'     => 'admin/sub_categories/create',
+                'route'   => null
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => null,
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => $count++,
+                ])->save();
+            }
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Nueva Marca',
+                'url'     => 'admin/brands/create',
+                'route'   => null
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => null,
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => $count++,
+                ])->save();
+            }
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Delivery',
+                'url'     => 'admin/deliveries/create',
+                'route'   => null
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => null,
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => $count++,
+                ])->save();
+            }
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'divider',
+                'url'     => null,
+                'route'   => null
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => null,
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => $count++,
+                ])->save();
+            }
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'setting',
+                'url'     => null,
+                'route'   => null
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_blank',
+                    'icon_class' => null,
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => $count++,
+                ])->save();
+            }
+
+        //-------------------------------------------------
+        Menu::firstOrCreate([
+            'name' => 'product_details', // Detalles del Producto
+        ]);
+        Menu::firstOrCreate([
+            'name' => 'deliveries', // Delivery
+        ]);
+        //-----------------FIN MODULO INVENTARI-----------    
+
     }
 }

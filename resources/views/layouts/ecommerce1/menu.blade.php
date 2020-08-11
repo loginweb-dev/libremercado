@@ -23,13 +23,13 @@
                 <div class="row mx-md-4 mx-1">
                   @foreach ($subcategories as $item2)
                     @php
-                      $products = \Modules\Bimgo\Entities\BgProduct::where('sub_category_id', $item2->id)->orderBy('id', 'desc')->limit(6)->get();
+                      $products = \App\Product::where('sub_category_id', $item2->id)->orderBy('id', 'desc')->limit(6)->get();
                     @endphp
                   <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
                     <h6 class="sub-title text-uppercase font-weight-bold blue-text">{{ $item2->title }}</h6>
                     <ul class="caret-style pl-0">
                       @foreach ($products as $item3)
-                        <li class=""><a class="menu-item mb-0" href="{{ route('bg_product', $item3->slug) }}">{{ $item3->name }}</a></li>
+                        <li class=""><a class="menu-item mb-0" href="#">{{ $item3->name }}</a></li>
                         {{-- <li class=""><a class="menu-item" href="">Lenovo</a></li>
                         <li class=""><a class="menu-item" href="">Apple</a></li>
                         <li class=""><a class="menu-item" href="">Dell</a></li>

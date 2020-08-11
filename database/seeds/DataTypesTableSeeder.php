@@ -100,6 +100,145 @@ class DataTypesTableSeeder extends Seeder
             ])->save();
         }
         //blocks ------------------------------------
+
+
+        $dataType = $this->dataType('slug', 'categories');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'categories',
+                'display_name_singular' => 'Categoria',
+                'display_name_plural'   => 'Categorias',
+                'icon'                  => 'voyager-play',
+                'model_name'            => 'App\\Category',
+                'policy_name'           => null,
+                'controller'            => 'App\\Http\\Controllers\\CategoryController',
+                'generate_permissions'  => 1,
+                'description'           => null,
+                'server_side'           => 1,
+                'details'               => [
+                    'order_column'         => 'id',
+                    'order_display_column' => 'id',
+                    'order_direction'      => 'asc',
+                    'default_search_key'   => 'id',
+                    'scope'                => null
+                ]
+            ])->save();
+        }
+
+        $dataType = $this->dataType('slug', 'sub_categories');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'sub_categories',
+                'display_name_singular' => 'Sub Categoria',
+                'display_name_plural'   => 'Sub Categorias',
+                'icon'                  => 'voyager-play',
+                'model_name'            => 'App\\SubCategory',
+                'policy_name'           => null,
+                'controller'            => 'App\\Http\\Controllers\\SubCategoryController',
+                'generate_permissions'  => 1,
+                'description'           => null,
+                'server_side'           => 1,
+                'details'               => [
+                    'order_column'         => 'id',
+                    'order_display_column' => 'id',
+                    'order_direction'      => 'asc',
+                    'default_search_key'   => 'id',
+                    'scope'                => null
+                ]
+            ])->save();
+        }
+
+        $dataType = $this->dataType('slug', 'brands');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'brands',
+                'display_name_singular' => 'Marca',
+                'display_name_plural'   => 'Marcas',
+                'icon'                  => 'voyager-play',
+                'model_name'            => 'App\\Brand',
+                'policy_name'           => null,
+                'controller'            => 'App\\Http\\Controllers\\BrandController',
+                'generate_permissions'  => 1,
+                'description'           => null,
+                'server_side'           => 1,
+                'details'               => [
+                    'order_column'         => 'id',
+                    'order_display_column' => 'id',
+                    'order_direction'      => 'asc',
+                    'default_search_key'   => 'id',
+                    'scope'                => null
+                ]
+            ])->save();
+        }
+
+        $dataType = $this->dataType('slug', 'products');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'products',
+                'display_name_singular' => 'Producto',
+                'display_name_plural'   => 'Productos',
+                'icon'                  => 'voyager-play',
+                'model_name'            => 'App\\Product',
+                'policy_name'           => null,
+                'controller'            => 'App\\Http\\Controllers\\ProductController',
+                'generate_permissions'  => 1,
+                'description'           => null,
+                'server_side'           => 1,
+                'details'               => [
+                    'order_column'         => 'id',
+                    'order_display_column' => 'id',
+                    'order_direction'      => 'asc',
+                    'default_search_key'   => 'id',
+                    'scope'                => null
+                ]
+            ])->save();
+        }
+
+        $dataType = $this->dataType('slug', 'product_details');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'product_details',
+                'display_name_singular' => 'Detalle de Producto',
+                'display_name_plural'   => 'Detalles de Productos',
+                'icon'                  => 'voyager-play',
+                'model_name'            => 'App\\ProductDetail',
+                'policy_name'           => null,
+                'controller'            => 'App\\Http\\Controllers\\ProductDetailsController',
+                'generate_permissions'  => 1,
+                'description'           => null,
+                'server_side'           => 1,
+                'details'               => [
+                    'order_column'         => 'id',
+                    'order_display_column' => 'id',
+                    'order_direction'      => 'asc',
+                    'default_search_key'   => 'id',
+                    'scope'                => null
+                ]
+            ])->save();
+        }
+
+        $dataType = $this->dataType('slug', 'deliveries');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'deliveries',
+                'display_name_singular' => 'Delivery',
+                'display_name_plural'   => 'Deliverys',
+                'icon'                  => 'voyager-play',
+                'model_name'            => 'App\\Delivery',
+                'policy_name'           => null,
+                'controller'            => 'App\\Http\\Controllers\\DeliveryController',
+                'generate_permissions'  => 1,
+                'description'           => null,
+                'server_side'           => 1,
+                'details'               => [
+                    'order_column'         => 'id',
+                    'order_display_column' => 'id',
+                    'order_direction'      => 'asc',
+                    'default_search_key'   => 'id',
+                    'scope'                => null
+                ]
+            ])->save();
+        }
     }
 
     /**

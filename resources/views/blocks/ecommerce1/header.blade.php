@@ -25,7 +25,7 @@
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a class="dark-grey-text font-small"><i class="{{ $item->icons }}" aria-hidden="true"></i> {{ $item->title }}</a>
                             @php
-                                $cant = \Modules\Bimgo\Entities\BgProduct::where('sub_category_id', $item->id)->count();
+                                $cant = \App\Product::where('sub_category_id', $item->id)->count();
                             @endphp
                             <a href="#"></a><span class="badge badge-danger badge-pill">{{ $cant }}</span></a>
                         </li>

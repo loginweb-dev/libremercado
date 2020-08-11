@@ -39,3 +39,17 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/block/move_down/{block_id}', 'BlockController@move_down')->name('block_move_down');
 
 });
+
+//---------- Products-----------------------------------------------
+Route::get('product_view/{product_id}', 'FrontEndController@product_view')->name('product_view');
+Route::get('product_stars/{product_id}/{stars}', 'FrontEndController@product_stars')->name('product_stars');
+
+// Routes  Cart -----------------------------------------------------------------------
+Route::get('ajax/cart/{slug}/{detail}', 'FrontEndController@addcart')->name('bg_ajax_addcart');
+Route::get('ajax/subtract/{slug}/{detail}', 'FrontEndController@subtractcart')->name('bg_ajax_subtractcart');
+Route::get('ajax/remove/{slug}/{detail}', 'FrontEndController@removecart')->name('bg_ajax_removecart');
+Route::get('ajax/product_details/{id}', 'FrontEndController@productdetails')->name('bg_ajax_product_details');
+Route::post('ajax/update/bussiness', 'FrontEndController@update_bussiness')->name('bg_ajax_update_bussiness');
+Route::post('/save/location', 'FrontEndController@save_location')->name('bg_save_location');
+Route::get('ajax/bg_regions/{id}', 'FrontEndController@regions_get')->name('bg_ajax_region_get');
+Route::get('ajax/bg_delivery/{region_id}', 'FrontEndController@delivery_get')->name('bg_ajax_delivery_get');

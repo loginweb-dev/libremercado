@@ -214,6 +214,7 @@ return [
 
     'additional_js' => [
         //'js/custom.js',
+        'https://cdn.jsdelivr.net/npm/sweetalert2@9'
     ],
 
     'googlemaps' => [

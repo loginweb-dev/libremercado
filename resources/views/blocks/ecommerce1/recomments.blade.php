@@ -8,7 +8,7 @@
                 @foreach ($data as $item)
                     {{-- @if($item->block == "recomments") --}}
                         @php
-                            $images = $item->images ? json_decode($item->images)[0] : '../images/icons-bimgo/icon-512x512.png';
+                            $images = $item->images ? json_decode($item->images)[0] : '../images/icons/icon-512x512.png';
                         @endphp
                         <div class="col-md-3 mt-3">
                             <div class="card card-ecommerce">
@@ -17,12 +17,12 @@
                                     @if($item->offer)
                                         <div class="texto-encima"><span class="badge badge-pill badge-info">En Oferta</span></div>
                                     @endif
-                                    <a href="{{ route('bg_product', $item->slug) }}">
+                                    <a href="#">
                                         <div class="mask rgba-white-slight"></div>
                                     </a>
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title mb-1"><strong><a href="{{ route('bg_product', $item->slug) }}" class="dark-grey-text">{{ $item->name }}</a></strong>
+                                    <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">{{ $item->name }}</a></strong>
                                     </h5>
                                     <span class="badge badge-danger mb-2">{{ json_decode($item->tags)[0] }}</span>
                                     <ul class="rating">

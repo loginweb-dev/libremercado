@@ -15,12 +15,12 @@
                         @if($item->offer)
                             <div class="texto-encima"><span class="badge badge-pill badge-info">En Oferta</span></div>
                         @endif
-                        <a href="{{ route('bg_product', $item->slug) }}">
+                        <a href="#">
                             <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title mb-1"><strong><a href="{{ route('bg_product', $item->slug) }}" class="dark-grey-text">{{ $item->name }}</a></strong></h5>
+                        <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">{{ $item->name }}</a></strong></h5>
                         <span class="badge badge-danger mb-2">{{ json_decode($item->tags)[0] }}</span>
                         <ul class="rating">
                             @switch($item->stars)
@@ -84,7 +84,7 @@
                                     <span class="float-left"><strong>{{ $default->price }} {{ setting('ecommerce.monedas') }}</strong></span>
                                 @endif
                                 <span class="float-right">
-                                    <a onclick="addcart('{{ route('bg_ajax_addcart', [$item->slug, $default->id]) }}')" data-toggle="tooltip" data-placement="top" title="Agregar al Carrito"><i
+                                    <a onclick="#" data-toggle="tooltip" data-placement="top" title="Agregar al Carrito"><i
                                         class="fas fa-shopping-cart ml-3"></i></a>
                                 </span>
                             </div>
